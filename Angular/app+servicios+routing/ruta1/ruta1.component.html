@@ -1,0 +1,17 @@
+
+  <div *ngFor="let persona of nombres;let i = index" id="1">
+    <li>{{i}}-{{persona.name}} {{persona.surname}}</li>  
+    <button (click)="delete(i)">Borrar</button>  
+  </div>
+  
+  
+  <div>
+    <label>Nombre</label>
+    <input [(ngModel)]="personaToAdd.name" type="text"/>
+    <label>Apellido</label>
+    <input [(ngModel)]="personaToAdd.surname" type="text"/>
+  </div>   
+  <div >  
+    <button *ngIf="validatePerson()" (click)="pushName()">Añadir</button>
+  </div>
+
